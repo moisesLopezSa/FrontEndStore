@@ -1,0 +1,352 @@
+/*PROPERTIES PALETTE*/
+:root {
+  /*Project's colors*/
+  --mainColor: #9c27b0;
+  --mainColorDark: #89119d;
+  --secondaryColor: #ffce00;
+  --secondaryColorDark: rgb(233, 187, 2);
+  /* Basics colors */
+  --White: #ffffff;
+  --black: #000000;
+  /*Project's fonts*/
+  --font: "Staatliches", cursive;
+}
+
+/*HEADER FONTS' PROPERTIES*/
+h1 {
+  font-size: 3.8rem;
+}
+
+h2 {
+  font-size: 2.8rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+  color: var(--secondaryColor);
+  font-family: var(--font);
+}
+
+/*GLOBALS*/
+html {
+  /*Apply a natural box layout model to all elements*/
+  box-sizing: border-box;
+  /*1 rem = 10 px*/
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--mainColor);
+  font-size: 1.6rem;
+}
+
+/* ----->>>>> FOR ALL PAGES <<<<<----- */
+
+/* >>>>> HEADER <<<<< */
+
+/* HEADER MOBIL */
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerContainer__logo {
+  height: 4rem;
+  margin: 1rem auto 1rem auto;
+}
+
+/* HEADER TABLET */
+@media (min-width: 768px) {
+  .headerContainer__logo {
+    height: 8rem;
+  }
+}
+
+/* HEADER LAPTOP */
+@media (min-width: 1024px) {
+  .headerContainer__logo {
+    height: 12rem;
+  }
+}
+
+/* >>>>> NAVIGATION <<<<< */
+
+/* NAVIGATION BAR MOBIL */
+.navContainer {
+  background-color: var(--mainColorDark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+  height: 4rem;
+}
+
+.navContainer__link {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: var(--font);
+  font-size: 3rem;
+  color: var(--White);
+}
+
+.navContainer__link:hover {
+  color: var(--secondaryColor);
+}
+
+.navContainer__link--focus {
+  color: var(--secondaryColor);
+}
+
+/* NAVIGATION BAR TABLET */
+@media (min-width: 768px) {
+  .navContainer {
+    gap: 5rem;
+    height: 6rem;
+  }
+
+  .navContainer__link {
+    font-size: 5rem;
+  }
+}
+
+/* >>>>> FOOTER <<<<< */
+
+/* FOOTER MOBIL */
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--mainColorDark);
+  width: 100%;
+  height: 2rem;
+  
+}
+
+.footerContainer__author {
+  font-family: var(--font);
+  font-size: 1rem;
+  text-align: center;
+  color: var(--White);
+}
+
+/* FOOTER TABLET */
+@media (min-width: 768px) {
+  .footerContainer {
+    height: 3rem;
+  }
+
+  .footerContainer__author {
+    font-size: 2rem;
+  }
+}
+
+/* FOOTER LAPTOP */
+@media (min-width: 1024px) {
+  .footerContainer {
+    height: 4rem;
+  }
+
+  .footerContainer__author {
+    font-size: 3rem;
+  }
+}
+
+/* ----->>>>> INDEX PAGE <<<<<----- */
+
+/* INDEX TITLE MOBIL */
+.indexTitle {
+  font-size: 3rem;
+}
+
+/* INDEX TITLE TABLET */
+@media (min-width: 768px) {
+  .indexTitle {
+    font-size: 3.4rem;
+  }
+}
+
+/* INDEX TITLE LAPTOP */
+@media (min-width: 1024px) {
+  .indexTitle {
+    font-size: 3.8rem;
+  }
+}
+
+/* PRODUCTS CONTAINER MOBIL*/
+.productsContainer {
+  margin: 1rem 5% 1rem 5%;
+}
+
+/* PRODUCTS*/
+.wrappProduct {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0.5rem;
+  background-color: var(--mainColorDark);
+}
+
+.wrappProduct__img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+}
+
+.wrappProduct__name {
+  font-family: var(--font);
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  color: var(--White);
+}
+
+.wrappProduct__price {
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+  font-family: var(--font);
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--secondaryColor);
+}
+
+.wrappProduct__graphic {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+/* PRODUCTS CONTAINER TABLET*/
+@media (min-width: 768px) {
+  .productsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    grid-auto-rows: minmax(100px, auto);
+  }
+
+  .wrappProduct__graphic--one {
+    grid-column: 1 / 3;
+    grid-row: 2;
+  }
+
+  .wrappProduct__graphic--two {
+    grid-column: 1 / 3;
+    grid-row: 7;
+  }
+}
+
+/* PRODUCTS CONTAINER LAPTOP*/
+@media (min-width: 1024px) {
+  .productsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    grid-auto-rows: minmax(100px, auto);
+  }
+
+  .wrappProduct__graphic--one {
+    grid-column: 1 / 3;
+    grid-row: 2;
+  }
+
+  .wrappProduct__graphic--two {
+    grid-column: 2 / 4;
+    grid-row: 5;
+  }
+}
+
+/* ----->>>>> ABOUT US PAGE <<<<<----- */
+
+/* ABOUT US MOBIL*/
+.aboutUsContainer {
+  margin: 1rem 5% 1rem 5%;
+}
+
+.aboutUsContainer__title {
+  margin: 1rem auto;
+}
+
+.us__wrapp,
+.buy__wrapp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.us__wrapp--info,
+.whyBuy__price--info,
+.whyBuy__dev--info,
+.whyBuy__delivery--info,
+.whyBuy__quality--info {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  padding: 0 1rem;
+  text-align: justify;
+  line-height: 2rem;
+  color: var(--White);
+}
+
+.us__wrapp--img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+}
+
+.whyBuy__price--img,
+.whyBuy__dev--img,
+.whyBuy__delivery--img,
+.whyBuy__quality--img {
+  width: 100%;
+}
+
+.whyBuy__price--head,
+.whyBuy__dev--head,
+.whyBuy__delivery--head,
+.whyBuy__quality--head {
+  margin: 0 auto 1rem auto;
+}
+
+/* ABOUT US TABLET*/
+@media (min-width: 768px) {
+  .us__wrapp {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .buy__wrapp {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .whyBuy__price--info,
+  .whyBuy__dev--info,
+  .whyBuy__delivery--info,
+  .whyBuy__quality--info {
+    text-align: center;
+  }
+}
+
+/* ----->>>>> PRODUCT PAGE <<<<<----- */
